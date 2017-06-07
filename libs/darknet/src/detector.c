@@ -22,7 +22,7 @@ bool darknet_detect(network *net, IplImage *ipl, float thresh,
   *num_detected_objects)
 {
   float nms = 0.4;
-
+	printf("inside darknet_detect");
   // Setup the image?
   image im = ipl_to_image(ipl);
   image sized = resize_image(im, net->w, net->h);
@@ -119,7 +119,7 @@ network create_network(char *cfg_filename, char *weight_filename)
 {
   network net = parse_network_cfg(cfg_filename);
   if (weight_filename)
-  {
+  { printf("Weights loaded (Inside create_network) \n");
     load_weights(&net, weight_filename);
   }
   set_batch_network(&net, 1);
@@ -129,6 +129,7 @@ network create_network(char *cfg_filename, char *weight_filename)
 char **get_class_names(char *classnames_filename)
 {
   char **names = get_labels(classnames_filename);
+  printf(names);
   return names;
 }
 // ----------------------------------------------------------------------------

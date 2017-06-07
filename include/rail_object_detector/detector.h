@@ -12,8 +12,11 @@
 #include <boost/function.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/thread/thread.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 
+
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include <ros/ros.h>
 #include <ros/callback_queue.h>
 #include <ros/advertise_service_options.h>
